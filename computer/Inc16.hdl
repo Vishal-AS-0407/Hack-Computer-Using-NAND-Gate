@@ -1,0 +1,123 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/02/Inc16.hdl
+
+/**
+ * 16-bit incrementer:
+ * out = in + 1 (arithmetic addition)
+ */
+
+CHIP Inc16 {
+    IN in[16];
+    OUT out[16];
+
+    PARTS:
+   // Put you code here:
+Nand(a=in[0],b=true,out=oA1);
+Nand(a=in[0],b=oA1,out=oA2);
+Nand(a=true,b=oA1,out=oA3);
+Nand(a=oA1,b=oA1,out=carry1);
+Nand(a=oA2,b=oA3,out=out[0]);
+
+Nand(a=in[1],b=carry1,out=oB1);
+Nand(a=in[1],b=oB1,out=oB2);
+Nand(a=carry1,b=oB1,out=oB3);
+Nand(a=oB1,b=oB1,out=carry2);
+Nand(a=oB2,b=oB3,out=out[1]);
+
+Nand(a=in[2],b=carry2,out=oC1);
+Nand(a=in[2],b=oC1,out=oC2);
+Nand(a=carry2,b=oC1,out=oC3);
+Nand(a=oC1,b=oC1,out=carry3);
+Nand(a=oC2,b=oC3,out=out[2]);
+
+
+Nand(a=in[3],b=carry3,out=oD1);
+Nand(a=in[3],b=oD1,out=oD2);
+Nand(a=carry3,b=oD1,out=oD3);
+Nand(a=oD1,b=oD1,out=carry4);
+Nand(a=oD2,b=oD3,out=out[3]);
+
+
+Nand(a=in[4],b=carry4,out=oE1);
+Nand(a=in[4],b=oE1,out=oE2);
+Nand(a=carry4,b=oE1,out=oE3);
+Nand(a=oE1,b=oE1,out=carry5);
+Nand(a=oE2,b=oE3,out=out[4]);
+
+
+Nand(a=in[5],b=carry5,out=oF1);
+Nand(a=in[5],b=oF1,out=oF2);
+Nand(a=carry5,b=oF1,out=oF3);
+Nand(a=oF1,b=oF1,out=carry6);
+Nand(a=oF2,b=oF3,out=out[5]);
+
+
+Nand(a=in[6],b=carry6,out=oG1);
+Nand(a=in[6],b=oG1,out=oG2);
+Nand(a=carry6,b=oG1,out=oG3);
+Nand(a=oG1,b=oG1,out=carry7);
+Nand(a=oG2,b=oG3,out=out[6]);
+
+
+Nand(a=in[7],b=carry7,out=oH1);
+Nand(a=in[7],b=oH1,out=oH2);
+Nand(a=carry7,b=oH1,out=oH3);
+Nand(a=oH1,b=oH1,out=carry8);
+Nand(a=oH2,b=oH3,out=out[7]);
+
+
+Nand(a=in[8],b=carry8,out=oI1);
+Nand(a=in[8],b=oI1,out=oI2);
+Nand(a=carry8,b=oI1,out=oI3);
+Nand(a=oI1,b=oI1,out=carry9);
+Nand(a=oI2,b=oI3,out=out[8]); 
+
+Nand(a=in[9],b=carry9,out=oJ1);
+Nand(a=in[9],b=oJ1,out=oJ2);
+Nand(a=carry9,b=oJ1,out=oJ3);
+Nand(a=oJ1,b=oJ1,out=carry10);
+Nand(a=oJ2,b=oJ3,out=out[9]);
+
+
+Nand(a=in[10],b=carry10,out=oK1);
+Nand(a=in[10],b=oK1,out=oK2);
+Nand(a=carry10,b=oK1,out=oK3);
+Nand(a=oK1,b=oK1,out=carry11);
+Nand(a=oK2,b=oK3,out=out[10]);
+
+
+Nand(a=in[11],b=carry11,out=oL1);
+Nand(a=in[11],b=oL1,out=oL2);
+Nand(a=carry11,b=oL1,out=oL3);
+Nand(a=oL1,b=oL1,out=carry12);
+Nand(a=oL2,b=oL3,out=out[11]);
+
+
+Nand(a=in[12],b=carry12,out=oM1);
+Nand(a=in[12],b=oM1,out=oM2);
+Nand(a=carry12,b=oM1,out=oM3);
+Nand(a=oM1,b=oM1,out=carry13);
+Nand(a=oM2,b=oM3,out=out[12]);
+
+
+Nand(a=in[13],b=carry13,out=oN1);
+Nand(a=in[13],b=oN1,out=oN2);
+Nand(a=carry13,b=oN1,out=oN3);
+Nand(a=oN1,b=oN1,out=carry14);
+Nand(a=oN2,b=oN3,out=out[13]);
+
+Nand(a=in[14],b=carry14,out=oO1);
+Nand(a=in[14],b=oO1,out=oO2);
+Nand(a=carry14,b=oO1,out=oO3);
+Nand(a=oO1,b=oO1,out=carry15);
+Nand(a=oO2,b=oO3,out=out[14]);
+
+Nand(a=in[15],b=carry15,out=oP1);
+Nand(a=in[15],b=oP1,out=oP2);
+Nand(a=carry15,b=oP1,out=oP3);
+Nand(a=oP1,b=oP1,out=carry16);
+Nand(a=oP2,b=oP3,out=out[15]);
+
+}
